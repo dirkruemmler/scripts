@@ -12,8 +12,7 @@ case $1 in
 
     mkdir -p ~/Sites/sw_$2dev
 
-#    composer create-project --no-interaction shopware/production ~/Sites/sw_$2dev
-    composer create-project --no-interaction shopware/production:v6.6.0.0-rc3 ~/Sites/sw_$2dev
+    composer create-project --no-interaction shopware/production ~/Sites/sw_$2dev
 
     cd ~/Sites/sw_$2dev
     
@@ -38,8 +37,6 @@ case $1 in
     bin/console framework:demodata --env=prod
     bin/console dal:refresh:index
 
-# cd ~/Sites/sw_$1dev/vendor/shopware/administration/Resources/app/administration
-# npm install
     osascript -e 'display notification "Installation von Shopware abgeschlossen!" with title "Done" subtitle "Shopware installed" sound name "Submarine"'
   ;;
 
